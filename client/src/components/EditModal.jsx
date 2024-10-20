@@ -1,4 +1,5 @@
 import { Button, Label, Modal, TextInput } from "flowbite-react";
+import PropTypes from "prop-types";
 import { useState } from "react";
 
 const EditModal = ({ todo }) => {
@@ -52,5 +53,12 @@ const EditModal = ({ todo }) => {
     </>
   );
 }
+
+EditModal.propTypes = {
+  todo: PropTypes.shape({
+    todo_id: PropTypes.number.isRequired,
+    todo_description: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default EditModal
