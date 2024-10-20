@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import EditModal from "./EditModal"
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([])
@@ -32,6 +33,7 @@ const ListTodos = () => {
       {todos.map((todo) => (
         <div key={todo.todo_id}>
           <p>{todo.todo_description}</p>
+          <EditModal todo={ todo } />
           <button type="button" onClick={() => deleteTodo(todo.todo_id)}>Delete</button>
         </div>
       ))}
