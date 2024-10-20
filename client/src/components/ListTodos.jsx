@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import EditModal from "./EditModal"
+import { Button } from "flowbite-react"
 
 const ListTodos = () => {
   const [todos, setTodos] = useState([])
@@ -29,12 +30,14 @@ const ListTodos = () => {
   }
 
   return (
-    <div>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 min-w-max">
       {todos.map((todo) => (
-        <div key={todo.todo_id}>
-          <p>{todo.todo_description}</p>
-          <EditModal todo={ todo } />
-          <button type="button" onClick={() => deleteTodo(todo.todo_id)}>Delete</button>
+        <div key={todo.todo_id} className="flex justify-between items-center border rounded-md shadow-md px-4 py-6 gap-4">
+          <p className="font-semibold">{todo.todo_description}</p>
+          <div className="flex gap-2">
+            <EditModal todo={ todo } />
+            <Button size="xs" color="failure" type="button" onClick={() => deleteTodo(todo.todo_id)}>Delete</Button>
+          </div>
         </div>
       ))}
     </div>

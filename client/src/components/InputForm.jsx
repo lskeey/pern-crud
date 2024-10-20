@@ -1,3 +1,4 @@
+import { Button, TextInput } from "flowbite-react"
 import { useState } from "react"
 
 const InputForm = () => {
@@ -20,9 +21,9 @@ const InputForm = () => {
   }
 
   return (
-  <form onSubmit={handleSubmit}>
-    <input type="text" value={description} onChange={e => setDescription(e.target.value)} />
-    <button type="submit">Add Description</button>
+  <form className="max-w-96 min-w-max mx-auto flex gap-4 mb-8 px-4" onSubmit={handleSubmit}>
+    <TextInput className="w-full" value={description} placeholder="Please enter your task description here" onChange={e => setDescription(e.target.value)} />
+    <Button type="submit">Add</Button>
   </form>
   )
 }

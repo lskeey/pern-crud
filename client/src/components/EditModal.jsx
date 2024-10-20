@@ -27,7 +27,7 @@ const EditModal = ({ todo }) => {
 
   return (
     <>
-      <Button onClick={() => setOpenModal(true)}>Edit</Button>
+      <Button size="xs" onClick={() => setOpenModal(true)}>Edit</Button>
       <Modal show={openModal} size="lg" onClose={onCloseModal} popup>
         <Modal.Header />
         <Modal.Body>
